@@ -1,16 +1,19 @@
+// React
 import React from "react";
+// Create Root
 import ReactDOM from "react-dom";
 // Main App
-import { App } from "./App";
+import App from "./App";
 // CSS
 import "./style.css";
 
 const Main = () => {
   return (
     <React.StrictMode>
-      <App></App>
+      <App />
     </React.StrictMode>
   );
 };
 
-ReactDOM.render(<Main></Main>, document.getElementById("root"));
+// eslint-disable-next-line no-undef
+ReactDOM.render(<Main />, document.getElementById("root"));

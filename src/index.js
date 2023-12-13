@@ -15,5 +15,4 @@ const Main = () => {
   );
 };
 
-// eslint-disable-next-line no-undef
 ReactDOM.render(<Main />, document.getElementById("root"));

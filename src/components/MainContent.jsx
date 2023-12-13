@@ -1,12 +1,10 @@
-// Context
-import { useGlobalContext } from "../context";
 // Image
 import waveImage from "../wave.png";
+// Context
+import { useGlobalContext } from "../context";
 
 const MainContent = () => {
-  const { mobileMode: showImage, initialWindowWidth } = useGlobalContext();
-
-  const mobileMainContent = showImage && initialWindowWidth < 1024;
+  const { mobileMode: showImage } = useGlobalContext()
 
   return (
     <main className='content-container'>
@@ -20,7 +18,7 @@ const MainContent = () => {
         </p>
         <button type='button'>START NOW</button>
       </section>
-      {!mobileMainContent && (
+      {!showImage && (
         <img
           src='https://react-projects-13-stripe-submenus.netlify.app/static/media/phone.58d7e3d6.svg'
           alt=''

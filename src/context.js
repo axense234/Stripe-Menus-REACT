@@ -1,31 +1,25 @@
 // React
 import { createContext, useContext, useState, useRef } from "react";
-// Hooks
-import useGetWindowWidth from "./hooks/useGetWindowWidth";
 // Data
 import { defaultModalCurrentPage } from "./data";
+// Hooks
+import useCheckWindowWidth from "./hooks/useCheckWindowWidth";
 
 const AppContext = createContext({});
 
 const AppProvider = ({ children }) => {
-  const initialWindowWidth = window.innerWidth;
-
-  const [mobileMode, setMobileMode] = useState(true);
   const [currentPage, setCurrentPage] = useState(defaultModalCurrentPage);
   const [showCurrentPageModal, setShowCurrentPageModal] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
 
   const modalRef = useRef(null);
 
-  useGetWindowWidth(setMobileMode);
+  const mobileMode = useCheckWindowWidth(1100) || window.innerWidth < 1100;
 
   return (
     <AppContext.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
-        mobileMode,
-        setMobileMode,
-        initialWindowWidth,
         currentPage,
         setCurrentPage,
         showCurrentPageModal,
@@ -33,6 +27,7 @@ const AppProvider = ({ children }) => {
         modalRef,
         showOverlay,
         setShowOverlay,
+        mobileMode,
       }}
     >
       {children}

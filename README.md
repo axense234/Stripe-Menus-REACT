@@ -20,9 +20,20 @@ git clone https://github.com/axense234/Stripe-Menus-REACT.git
 
 ### Executing program
 
+- **Using NPM**
+
 ```
 npm install
 npm start
+```
+
+- **Using Docker**
+
+```
+docker build -t stripes-menus-react:0.3.0
+docker stop stripes-menus-react-app
+docker rm stripes-menus-react-app
+docker run -d -p 3000:3000 --name stripes-menus-react-app stripes-menus-react:0.3.0
 ```
 
 ## **Authors**
@@ -31,6 +42,8 @@ npm start
 
 ## **Version History**
 
+- 0.3
+  - Analyzed the code to gather to-do tasks. Styled the project a bit, made the project work like how it is intended to.
 - 0.2
   - Improved react logic and looks by a ton
   - See [commit change](https://github.com/axense234/Stripe-Menus-REACT/commits/master) or See [release history](https://github.com/axense234/Stripe-Menus-REACT/releases)

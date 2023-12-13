@@ -23,7 +23,7 @@ const Overlay = () => {
       timeout = setTimeout(() => {
         overlay.style.opacity = "1";
         overlay.style.transform = "scale(1)";
-      }, 100);
+      }, 20);
     } else {
       overlay.style.opacity = "0";
       overlay.style.transform = "scale(0)";

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
 export const pageLinks = [
   { id: 1, label: "Products", dest: "products" },
   { id: 2, label: "Developers", dest: "developers" },

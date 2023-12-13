@@ -11,14 +11,11 @@ import Modal from "./Modal";
 
 const Navbar = () => {
   const {
-    mobileMode: showMenu,
-    initialWindowWidth,
     setCurrentPage,
     setShowCurrentPageModal,
     setShowOverlay,
+    mobileMode: showMenu
   } = useGlobalContext();
-
-  const mobileNavbar = initialWindowWidth < 1024 && showMenu;
 
   return (
     <nav className='navbar-container'>
@@ -26,7 +23,7 @@ const Navbar = () => {
         <h1>stripe</h1>
       </Link>
       <Modal />
-      {mobileNavbar || (
+      {showMenu || (
         <div className='navbar-container__pageLinks'>
           {pageLinks.map((link) => {
             return (
@@ -53,7 +50,7 @@ const Navbar = () => {
           })}
         </div>
       )}
-      {!mobileNavbar ? (
+      {!showMenu ? (
         <button type='button'>SIGN IN</button>
       ) : (
         <BiMenu onClick={() => setShowOverlay(true)} />

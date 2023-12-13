@@ -6,14 +6,14 @@ import Overlay from "./Overlay";
 
 const SharedLayout = () => {
   return (
-    <>
+    <div className="shared-layout-container">
       <Navbar />
       <Overlay />
       <>
         <Outlet />
       </>
-    </>
-  );
+    </div>
+)
 };
 
 export default SharedLayout;

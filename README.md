@@ -11,6 +11,8 @@ A react project that focuses on creating modals/overlays, displaying certain com
 ### Dependencies
 
 - Check package.json for details.
+- Git
+- Docker(if you want to test the project using Docker)
 
 ### Installing
 
@@ -30,7 +32,7 @@ npm start
 - **Using Docker**
 
 ```
-docker build -t stripes-menus-react:0.3.0
+docker build -t stripes-menus-react:0.3.0 .
 docker stop stripes-menus-react-app
 docker rm stripes-menus-react-app
 docker run -d -p 3000:3000 --name stripes-menus-react-app stripes-menus-react:0.3.0
